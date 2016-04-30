@@ -26,23 +26,24 @@
 import os
 import glob
 from datetime import datetime
+from mutagen.mp3 import MP3
 
 
 BODY = '''<?xml version="1.0" encoding="utf-8"?>
  <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
  <channel>
  <atom:link href="http://192.168.1.2/feed.xml" rel="self" type="application/rss+xml" />
-     <title>PODCAST TITLE</title>
+     <title>BZ PODCAST</title>
      <link>http://192.168.1.2</link>
-     <description>DESCRIPTION OF PODCAST (SHORT)</description>
+     <description>BZ local feed</description>
      <lastBuildDate>{date}</lastBuildDate>
      <language>en-us</language>
      <copyright>Copyright 2010 © WHOEVER</copyright>
-     <itunes:subtitle>PODCAST SUBTITLE</itunes:subtitle>
-     <itunes:author>PODCAST AUTHOR</itunes:author>
-     <itunes:summary>PODCAST SUMMARY (LONGER)</itunes:summary>
+     <itunes:subtitle>BZ local feed</itunes:subtitle>
+     <itunes:author>BZ</itunes:author>
+     <itunes:summary>BZ local feed</itunes:summary>
      <itunes:owner>
-         <itunes:name>PODCAST MAINTAINER</itunes:name>
+         <itunes:name>BZ</itunes:name>
          <itunes:email>maintainer@email.com</itunes:email>
      </itunes:owner>
      <itunes:image href="http://192.168.1.2/logo.jpg" />
@@ -66,7 +67,7 @@ ITEM = '''
     <enclosure url="{link}" length="{size}" type="audio/mpeg"/>
     <guid>{link}</guid>
     <pubDate>{date}</pubDate>
-    <itunes:duration>4:21</itunes:duration>
+    <itunes:duration>{duration}</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>
     <itunes:explicit>no</itunes:explicit>
@@ -83,7 +84,8 @@ if __name__ == '__main__':
         ITEM.format(title=name,
                     link=HOST.format(name),
                     date=now,
-                    size=os.path.getsize(name))
+                    size=os.path.getsize(name),
+                    duration=int(MP3(name).info.length))
         for name in glob.glob('*.mp3'))
     feed = BODY.format(items=items, date=now)
     print(feed)

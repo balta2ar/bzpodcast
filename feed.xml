@@ -1,107 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-  <channel>
-    <atom:link href="http://192.168.1.2/feed.xml" rel="self" type="application/rss+xml"/>
-    <title>PODCAST TITLE</title>
-    <link>http://192.168.1.2</link>
-    <description>DESCRIPTION OF PODCAST (SHORT)</description>
-    <lastBuildDate>2016-04-25 09:50:39.602848</lastBuildDate>
-    <language>en-us</language>
-    <copyright>Copyright 2010 © WHOEVER</copyright>
-    <itunes:subtitle>PODCAST SUBTITLE</itunes:subtitle>
-    <itunes:author>PODCAST AUTHOR</itunes:author>
-    <itunes:summary>PODCAST SUMMARY (LONGER)</itunes:summary>
-    <itunes:owner>
-      <itunes:name>PODCAST MAINTAINER</itunes:name>
-      <itunes:email>maintainer@email.com</itunes:email>
-    </itunes:owner>
-    <itunes:image href="http://192.168.1.2/logo.jpg"/>
-    <itunes:category text="Category1"/>
-    <itunes:category text="Category2">
-      <itunes:category text="Subcategory"/>
-    </itunes:category>
-    <item>
-      <title>put-samtsa.mp3</title>
-      <link>http://192.168.1.2/put-samtsa.mp3</link>
-      <itunes:author>Item Author</itunes:author>
-      <description>put-samtsa.mp3</description>
-      <itunes:summary>put-samtsa.mp3</itunes:summary>
-      <enclosure url="http://192.168.1.2/put-samtsa.mp3" length="562499010" type="audio/mpeg"/>
-      <guid>http://192.168.1.2/put-samtsa.mp3</guid>
-      <pubDate>2016-04-25 09:50:39.602848</pubDate>
-      <itunes:duration>4:21</itunes:duration>
-      <itunes:keywords>Keywords</itunes:keywords>
-      <category>Podcasts</category>
-      <itunes:explicit>no</itunes:explicit>
-      <title>My RSS entry</title>
-      <link>http://example.com/entry4711</link>
-      <pubDate>Mon Apr 25 09:52:48 MSK 2016</pubDate>
-      <description>Good news</description>
-      <guid>http://example.com/entry4711</guid>
-    </item>
-    <item>
-      <title>absolute-beginner-s1-copy.mp3</title>
-      <link>http://192.168.1.2/absolute-beginner-s1-copy.mp3</link>
-      <itunes:author>Item Author</itunes:author>
-      <description>absolute-beginner-s1-copy.mp3</description>
-      <itunes:summary>absolute-beginner-s1-copy.mp3</itunes:summary>
-      <enclosure url="http://192.168.1.2/absolute-beginner-s1-copy.mp3" length="327391012" type="audio/mpeg"/>
-      <guid>http://192.168.1.2/absolute-beginner-s1-copy.mp3</guid>
-      <pubDate>2016-04-25 09:50:39.602848</pubDate>
-      <itunes:duration>4:21</itunes:duration>
-      <itunes:keywords>Keywords</itunes:keywords>
-      <category>Podcasts</category>
-      <itunes:explicit>no</itunes:explicit>
-    </item>
-    <item>
-      <title>talk.mp3</title>
-      <link>http://192.168.1.2/talk.mp3</link>
-      <itunes:author>Item Author</itunes:author>
-      <description>talk.mp3</description>
-      <itunes:summary>talk.mp3</itunes:summary>
-      <enclosure url="http://192.168.1.2/talk.mp3" length="33115670" type="audio/mpeg"/>
-      <guid>http://192.168.1.2/talk.mp3</guid>
-      <pubDate>2016-04-25 09:50:39.602848</pubDate>
-      <itunes:duration>4:21</itunes:duration>
-      <itunes:keywords>Keywords</itunes:keywords>
-      <category>Podcasts</category>
-      <itunes:explicit>no</itunes:explicit>
-    </item>
-    <item>
-      <title>selfseduct.mp3</title>
-      <link>http://192.168.1.2/selfseduct.mp3</link>
-      <itunes:author>Item Author</itunes:author>
-      <description>selfseduct.mp3</description>
-      <itunes:summary>selfseduct.mp3</itunes:summary>
-      <enclosure url="http://192.168.1.2/selfseduct.mp3" length="159009363" type="audio/mpeg"/>
-      <guid>http://192.168.1.2/selfseduct.mp3</guid>
-      <pubDate>2016-04-25 09:50:39.602848</pubDate>
-      <itunes:duration>4:21</itunes:duration>
-      <itunes:keywords>Keywords</itunes:keywords>
-      <category>Podcasts</category>
-      <itunes:explicit>no</itunes:explicit>
-    </item>
-    <item>
-      <title>auditorium-q.mp3</title>
-      <link>http://192.168.1.2/auditorium-q.mp3</link>
-      <itunes:author>Item Author</itunes:author>
-      <description>auditorium-q.mp3</description>
-      <itunes:summary>auditorium-q.mp3</itunes:summary>
-      <enclosure url="http://192.168.1.2/auditorium-q.mp3" length="75459115" type="audio/mpeg"/>
-      <guid>http://192.168.1.2/auditorium-q.mp3</guid>
-      <pubDate>2016-04-25 09:50:39.602848</pubDate>
-      <itunes:duration>4:21</itunes:duration>
-      <itunes:keywords>Keywords</itunes:keywords>
-      <category>Podcasts</category>
-      <itunes:explicit>no</itunes:explicit>
-    </item>
+ <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+ <channel>
+ <atom:link href="http://192.168.1.2/feed.xml" rel="self" type="application/rss+xml" />
+     <title>BZ PODCAST</title>
+     <link>http://192.168.1.2</link>
+     <description>BZ local feed</description>
+     <lastBuildDate>2016-04-30 13:10:37.673402</lastBuildDate>
+     <language>en-us</language>
+     <copyright>Copyright 2010 © WHOEVER</copyright>
+     <itunes:subtitle>BZ local feed</itunes:subtitle>
+     <itunes:author>BZ</itunes:author>
+     <itunes:summary>BZ local feed</itunes:summary>
+     <itunes:owner>
+         <itunes:name>BZ</itunes:name>
+         <itunes:email>maintainer@email.com</itunes:email>
+     </itunes:owner>
+     <itunes:image href="http://192.168.1.2/logo.jpg" />
+     <itunes:category text="Category1" />
+     <itunes:category text="Category2">
+            <itunes:category text="Subcategory" />
+     </itunes:category>
+  
+<item>
+    <title>put-samtsa.mp3</title>
+    <link>http://192.168.1.2/put-samtsa.mp3</link>
+    <itunes:author>Item Author</itunes:author>
+    <description>put-samtsa.mp3</description>
+    <itunes:summary>put-samtsa.mp3</itunes:summary>
+    <enclosure url="http://192.168.1.2/put-samtsa.mp3" length="562499010" type="audio/mpeg"/>
+    <guid>http://192.168.1.2/put-samtsa.mp3</guid>
+    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <itunes:duration>23437</itunes:duration>
+    <itunes:keywords>Keywords</itunes:keywords>
+    <category>Podcasts</category>
     <itunes:explicit>no</itunes:explicit>
-  </channel>
-  <item>
-    <title>My RSS entry</title>
-    <link>http://example.com/entry4711</link>
-    <pubDate>Mon Apr 25 09:52:48 MSK 2016</pubDate>
-    <description>Good news</description>
-    <guid>http://example.com/entry4711</guid>
-  </item>
-</rss>
+</item>
+
+
+<item>
+    <title>absolute-beginner-s1-copy.mp3</title>
+    <link>http://192.168.1.2/absolute-beginner-s1-copy.mp3</link>
+    <itunes:author>Item Author</itunes:author>
+    <description>absolute-beginner-s1-copy.mp3</description>
+    <itunes:summary>absolute-beginner-s1-copy.mp3</itunes:summary>
+    <enclosure url="http://192.168.1.2/absolute-beginner-s1-copy.mp3" length="327391012" type="audio/mpeg"/>
+    <guid>http://192.168.1.2/absolute-beginner-s1-copy.mp3</guid>
+    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <itunes:duration>21657</itunes:duration>
+    <itunes:keywords>Keywords</itunes:keywords>
+    <category>Podcasts</category>
+    <itunes:explicit>no</itunes:explicit>
+</item>
+
+
+<item>
+    <title>talk.mp3</title>
+    <link>http://192.168.1.2/talk.mp3</link>
+    <itunes:author>Item Author</itunes:author>
+    <description>talk.mp3</description>
+    <itunes:summary>talk.mp3</itunes:summary>
+    <enclosure url="http://192.168.1.2/talk.mp3" length="33115670" type="audio/mpeg"/>
+    <guid>http://192.168.1.2/talk.mp3</guid>
+    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <itunes:duration>1379</itunes:duration>
+    <itunes:keywords>Keywords</itunes:keywords>
+    <category>Podcasts</category>
+    <itunes:explicit>no</itunes:explicit>
+</item>
+
+
+<item>
+    <title>selfseduct.mp3</title>
+    <link>http://192.168.1.2/selfseduct.mp3</link>
+    <itunes:author>Item Author</itunes:author>
+    <description>selfseduct.mp3</description>
+    <itunes:summary>selfseduct.mp3</itunes:summary>
+    <enclosure url="http://192.168.1.2/selfseduct.mp3" length="159009363" type="audio/mpeg"/>
+    <guid>http://192.168.1.2/selfseduct.mp3</guid>
+    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <itunes:duration>6625</itunes:duration>
+    <itunes:keywords>Keywords</itunes:keywords>
+    <category>Podcasts</category>
+    <itunes:explicit>no</itunes:explicit>
+</item>
+
+
+<item>
+    <title>auditorium-q.mp3</title>
+    <link>http://192.168.1.2/auditorium-q.mp3</link>
+    <itunes:author>Item Author</itunes:author>
+    <description>auditorium-q.mp3</description>
+    <itunes:summary>auditorium-q.mp3</itunes:summary>
+    <enclosure url="http://192.168.1.2/auditorium-q.mp3" length="75459115" type="audio/mpeg"/>
+    <guid>http://192.168.1.2/auditorium-q.mp3</guid>
+    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <itunes:duration>3144</itunes:duration>
+    <itunes:keywords>Keywords</itunes:keywords>
+    <category>Podcasts</category>
+    <itunes:explicit>no</itunes:explicit>
+</item>
+
+     <itunes:explicit>no</itunes:explicit>
+ </channel>
+ </rss>
+
