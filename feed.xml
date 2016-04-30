@@ -5,7 +5,7 @@
      <title>BZ PODCAST</title>
      <link>http://192.168.1.2</link>
      <description>BZ local feed</description>
-     <lastBuildDate>2016-04-30 13:10:37.673402</lastBuildDate>
+     <lastBuildDate>2016-04-30 13:21:40.639861</lastBuildDate>
      <language>en-us</language>
      <copyright>Copyright 2010 © WHOEVER</copyright>
      <itunes:subtitle>BZ local feed</itunes:subtitle>
@@ -29,7 +29,7 @@
     <itunes:summary>put-samtsa.mp3</itunes:summary>
     <enclosure url="http://192.168.1.2/put-samtsa.mp3" length="562499010" type="audio/mpeg"/>
     <guid>http://192.168.1.2/put-samtsa.mp3</guid>
-    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <pubDate>Tue, 09 Dec 2014 00:00:02 +0300</pubDate>
     <itunes:duration>23437</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>
@@ -45,7 +45,7 @@
     <itunes:summary>absolute-beginner-s1-copy.mp3</itunes:summary>
     <enclosure url="http://192.168.1.2/absolute-beginner-s1-copy.mp3" length="327391012" type="audio/mpeg"/>
     <guid>http://192.168.1.2/absolute-beginner-s1-copy.mp3</guid>
-    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <pubDate>Mon, 25 Apr 2016 09:47:21 +0300</pubDate>
     <itunes:duration>21657</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>
@@ -61,7 +61,7 @@
     <itunes:summary>talk.mp3</itunes:summary>
     <enclosure url="http://192.168.1.2/talk.mp3" length="33115670" type="audio/mpeg"/>
     <guid>http://192.168.1.2/talk.mp3</guid>
-    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <pubDate>Tue, 16 Dec 2014 00:29:10 +0300</pubDate>
     <itunes:duration>1379</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>
@@ -77,7 +77,7 @@
     <itunes:summary>selfseduct.mp3</itunes:summary>
     <enclosure url="http://192.168.1.2/selfseduct.mp3" length="159009363" type="audio/mpeg"/>
     <guid>http://192.168.1.2/selfseduct.mp3</guid>
-    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <pubDate>Mon, 08 Dec 2014 01:57:54 +0300</pubDate>
     <itunes:duration>6625</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>
@@ -93,7 +93,7 @@
     <itunes:summary>auditorium-q.mp3</itunes:summary>
     <enclosure url="http://192.168.1.2/auditorium-q.mp3" length="75459115" type="audio/mpeg"/>
     <guid>http://192.168.1.2/auditorium-q.mp3</guid>
-    <pubDate>2016-04-30 13:10:37.673402</pubDate>
+    <pubDate>Tue, 16 Dec 2014 00:33:17 +0300</pubDate>
     <itunes:duration>3144</itunes:duration>
     <itunes:keywords>Keywords</itunes:keywords>
     <category>Podcasts</category>

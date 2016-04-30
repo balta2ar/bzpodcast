@@ -26,6 +26,8 @@
 import os
 import glob
 from datetime import datetime
+from datetime import tzinfo
+from email.utils import formatdate
 from mutagen.mp3 import MP3
 
 
@@ -78,12 +80,18 @@ ITEM = '''
 HOST = 'http://192.168.1.2/{0}'
 
 
+def get_pubDate(name):
+    date = datetime.fromtimestamp(os.path.getmtime(name))
+    return formatdate(float(date.strftime('%s')), tzinfo())
+
+
 if __name__ == '__main__':
     now = str(datetime.now())
     items = '\n'.join(
         ITEM.format(title=name,
                     link=HOST.format(name),
-                    date=now,
+                    #date=now,
+                    date=get_pubDate(name),
                     size=os.path.getsize(name),
                     duration=int(MP3(name).info.length))
         for name in glob.glob('*.mp3'))
