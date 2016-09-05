@@ -39,9 +39,14 @@ logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 
 
 BODY = '''<?xml version="1.0" encoding="utf-8"?>
- <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+ <rss xmlns:media="http://search.yahoo.com/mrss/"
+      xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
+      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      version="2.0">
  <channel>
  <atom:link href="http://192.168.1.2/feed.xml" rel="self" type="application/rss+xml" />
+     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
      <title>{podcast_title}</title>
      <link>http://192.168.1.2</link>
      <description>{podcast_description}</description>
@@ -67,20 +72,22 @@ BODY = '''<?xml version="1.0" encoding="utf-8"?>
 '''
 
 ITEM = '''
-<item>
-    <title>{title}</title>
-    <link>{link}</link>
-    <itunes:author>Item Author</itunes:author>
-    <description>{title}</description>
-    <itunes:summary>{title}</itunes:summary>
-    <enclosure url="{link}" length="{size}" type="audio/mpeg"/>
-    <guid>{link}</guid>
-    <pubDate>{date}</pubDate>
-    <itunes:duration>{duration}</itunes:duration>
-    <itunes:keywords>Keywords</itunes:keywords>
-    <category>Podcasts</category>
-    <itunes:explicit>no</itunes:explicit>
-</item>
+        <item>
+            <title>{title}</title>
+            <link>{link}</link>
+            <author>Item Author</author>
+            <itunes:author>Item Author</itunes:author>
+            <description>{title}</description>
+            <itunes:summary>{title}</itunes:summary>
+            <enclosure url="{link}" length="{size}" type="{mime_type}"/>
+            <media:content url="{link}" fileSize="{size}" type="{mime_type}"/>
+            <guid>{link}</guid>
+            <pubDate>{date}</pubDate>
+            <itunes:duration>{duration}</itunes:duration>
+            <itunes:keywords>Keywords</itunes:keywords>
+            <category>Podcasts</category>
+            <itunes:explicit>no</itunes:explicit>
+        </item>
 '''
 
 
@@ -108,6 +115,15 @@ def get_length(name):
         return 0
 
 
+def get_mime_type(name):
+    if name.endswith('.mp3'):
+        return 'audio/mpeg'
+    elif name.endswith('.mp4'):
+        return 'audio/mp4'
+    else:
+        return 'unknown'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Generate podcast feed from files')
     parser.add_argument('--files', type=str, default='*.mp3',
@@ -123,6 +139,7 @@ if __name__ == '__main__':
         ITEM.format(title=name,
                     link=HOST.format(name),
                     #date=now,
+                    mime_type=get_mime_type(name),
                     date=get_pubDate(name),
                     size=os.path.getsize(name),
                     duration=get_length(name))

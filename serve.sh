@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo twistd -n web --path . -p 80
+sudo /usr/bin/twistd -n web --path . -p 80
