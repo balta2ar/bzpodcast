@@ -25,25 +25,32 @@
 
 import os
 import glob
+import argparse
+import logging
 from datetime import datetime
 from datetime import tzinfo
 from email.utils import formatdate
 from mutagen.mp3 import MP3
+from mutagen.mp4 import MP4
+from mutagen.mp4 import MP4StreamInfoError
+
+FORMAT = '%(asctime)-15s %(levelname)s %(message)s'
+logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 
 
 BODY = '''<?xml version="1.0" encoding="utf-8"?>
  <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
  <channel>
  <atom:link href="http://192.168.1.2/feed.xml" rel="self" type="application/rss+xml" />
-     <title>BZ PODCAST</title>
+     <title>{podcast_title}</title>
      <link>http://192.168.1.2</link>
-     <description>BZ local feed</description>
+     <description>{podcast_description}</description>
      <lastBuildDate>{date}</lastBuildDate>
      <language>en-us</language>
      <copyright>Copyright 2010 © WHOEVER</copyright>
      <itunes:subtitle>BZ local feed</itunes:subtitle>
      <itunes:author>BZ</itunes:author>
-     <itunes:summary>BZ local feed</itunes:summary>
+     <itunes:summary>{podcast_description}</itunes:summary>
      <itunes:owner>
          <itunes:name>BZ</itunes:name>
          <itunes:email>maintainer@email.com</itunes:email>
@@ -85,7 +92,32 @@ def get_pubDate(name):
     return formatdate(float(date.strftime('%s')), tzinfo())
 
 
+def get_length(name):
+    logging.info('get_length: "%s"', name)
+    encoder = None
+    if name.endswith('.mp3'):
+        encoder = MP3
+    elif name.endswith('.mp4'):
+        encoder = MP4
+    else:
+        raise ValueError('Unknown media type: "%s"' % name)
+    try:
+        return int(encoder(name).info.length)
+    except MP4StreamInfoError:
+        logging.info('Failed to get length for "%s"', name)
+        return 0
+
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Generate podcast feed from files')
+    parser.add_argument('--files', type=str, default='*.mp3',
+                        help='Input files glob')
+    parser.add_argument('--podcast-title', type=str, default='BZ PODCAST',
+                        help='Podcast title')
+    parser.add_argument('--podcast-description', type=str, default='BZ local feed',
+                        help='Podcast title')
+    args = parser.parse_args()
+
     now = str(datetime.now())
     items = '\n'.join(
         ITEM.format(title=name,
@@ -93,7 +125,10 @@ if __name__ == '__main__':
                     #date=now,
                     date=get_pubDate(name),
                     size=os.path.getsize(name),
-                    duration=int(MP3(name).info.length))
-        for name in glob.glob('*.mp3'))
-    feed = BODY.format(items=items, date=now)
+                    duration=get_length(name))
+        for name in glob.glob(args.files)
+        if get_length(name) != 0)
+    feed = BODY.format(items=items, date=now,
+                       podcast_title=args.podcast_title,
+                       podcast_description=args.podcast_description)
     print(feed)
