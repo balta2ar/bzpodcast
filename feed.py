@@ -126,7 +126,7 @@ if __name__ == '__main__':
                     date=get_pubDate(name),
                     size=os.path.getsize(name),
                     duration=get_length(name))
-        for name in glob.glob(args.files)
+        for name in sorted(glob.glob(args.files))
         if get_length(name) != 0)
     feed = BODY.format(items=items, date=now,
                        podcast_title=args.podcast_title,
