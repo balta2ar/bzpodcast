@@ -7,7 +7,12 @@ episode="$base.mp3"
 
 shift 1
 
-ls $input_dir/**/*.mp3 | sort -V > $file_list
+#ls $input_dir/**/*.mp3 | sort -V > $file_list
+set -e
+set -o pipefail
+
+find $input_dir -name '*.mp3'| sort -V > $file_list
+#exit 1
 sed -i 's/^/file /' $file_list
 #ffmpeg -f concat -i 2.txt absolute-beginner-s2-copy.mp3
 #ffmpeg -f concat -i $file_list -c copy $episode
